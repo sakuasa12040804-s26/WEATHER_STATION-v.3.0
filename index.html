@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07111f"><title>WEATHER STATION 3.0</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="app">
+<header class="top"><div class="mark">W</div><div><p class="eyebrow">ATMOSPHERIC MONITORING SYSTEM</p><h1>WEATHER <span>STATION</span></h1></div><div class="version">v3.0</div></header>
+<section class="panel search-panel"><div class="search-title"><div><p class="eyebrow">LIVE WEATHER DATA</p><h2>気象観測センター</h2></div><div class="signal"><i></i> ONLINE API</div></div>
+<form id="searchForm"><label for="cityInput">観測地点</label><div class="search-row"><input id="cityInput" autocomplete="off" value="Tokyo" placeholder="例：Tokyo / Osaka / Kyoto" required><button id="searchButton" type="submit">SEARCH ↗</button></div><p class="help">都市名を英語で入力すると検索しやすいよ（Tokyo / Osaka / Kyoto など）。</p></form></section>
+<section id="weatherPanel" class="panel weather-panel">
+<div class="weather-head"><div><p class="eyebrow">CURRENT CONDITIONS</p><h2 id="placeName">TOKYO, JP</h2><p id="updatedAt" class="muted">最新データを取得中…</p></div><div id="weatherIcon" class="weather-icon">◌</div></div>
+<div class="main-weather"><div><div class="temperature"><span id="temperature">--</span><sup>°C</sup></div><div id="description" class="description">データを読み込み中…</div><div class="feels">体感温度 <strong id="feelsLike">--°</strong></div></div><div class="sun-line"><span>DAY / NIGHT</span><div class="sun-track"><i id="dayMarker"></i></div><small id="daylightText">—</small></div></div>
+<div class="metrics"><article><span class="metric-icon">💧</span><p>HUMIDITY</p><strong id="humidity">--<small>%</small></strong></article><article><span class="metric-icon">〰</span><p>WIND SPEED</p><strong id="wind">--<small>km/h</small></strong></article><article><span class="metric-icon">🌡</span><p>PRESSURE</p><strong id="pressure">--<small>hPa</small></strong></article><article><span class="metric-icon">☁</span><p>CLOUD COVER</p><strong id="cloud">--<small>%</small></strong></article></div>
+</section>
+<section class="panel forecast-panel"><div class="forecast-title"><div><p class="eyebrow">OUTLOOK</p><h2>5-DAY FORECAST</h2></div><span class="muted">5日間の予報</span></div><div id="forecast" class="forecast"><p class="muted">予報を読み込み中…</p></div></section>
+<p id="message" class="message" role="status">気象データを取得しています…</p>
+<footer><span>WEATHER STATION <b> / </b> ATMOSPHERIC LAB</span><p>データ提供：Open-Meteo。観測値・予報は更新タイミングや地点により異なります。</p></footer>
+</main><script src="script.js"></script></body></html>
